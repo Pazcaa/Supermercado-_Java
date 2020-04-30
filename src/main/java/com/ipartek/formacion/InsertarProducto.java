@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Scanner;
 
+import com.ipartek.formacion.modelo.ConnectionManager;
 import com.ipartek.formacion.modelo.Producto;
 
 
@@ -19,13 +20,12 @@ import com.ipartek.formacion.modelo.Producto;
 public class InsertarProducto {
 
 	public static void main(String[] args) {
+	
 		
 		
-		
-		final String URL ="jdbc:mysql://localhost/supermercado";
-		final String USUARIO = "debian-sys-maint";
-		final String PASS = "o8lAkaNtX91xMUcV";
 		final String SQL = "INSERT INTO producto (nombre, id_usuario) VALUES ( ? , 1); ";
+		Connection conexion = null;
+		PreparedStatement pst = null;
 		boolean continuar = true;
 		
 		
@@ -34,15 +34,18 @@ public class InsertarProducto {
 			Scanner sc = new Scanner(System.in);
 			
 			//comprobar que tenemos el .jar de MySQL
-		   Class.forName("com.mysql.jdbc.Driver");
-		   System.out.println("Existe el .jar para MySQL");
+		  // Class.forName("com.mysql.jdbc.Driver");
+			
+		  // System.out.println("Existe el .jar para MySQL");
 		   
 		 //conectarnos con la bbdd del supermercado
-		   Connection conexion = DriverManager.getConnection (URL, USUARIO, PASS);
-		   System.out.println("Hemos establecido la conexion con exito");
+		   //Connection conexion = DriverManager.getConnection (URL, USUARIO, PASS);
+			conexion = ConnectionManager.getConnection();
+		  // System.out.println("Hemos establecido la conexion con exito");
 		   
 		   //Realizar una consulta
-		   PreparedStatement pst = conexion.prepareStatement(SQL);
+			pst = conexion.prepareStatement(SQL);
+		   //PreparedStatement pst = conexion.prepareStatement(SQL);
 		   
 		   
 			
