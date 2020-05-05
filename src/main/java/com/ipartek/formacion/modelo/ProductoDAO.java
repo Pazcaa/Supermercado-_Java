@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Esta clase sirve para detallar los metodos para obtener, modificar, eliminar y actualizar la base de datos de MySQL.
  * 
  *
- * @see url github 
+ * @see url github https://github.com/Pazcaa/Supermercado-_Java
  * @author Paz Caamaño Barrera
  *
  */
