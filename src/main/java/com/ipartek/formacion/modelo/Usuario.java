@@ -4,16 +4,14 @@ public class Usuario {
 	
 	private int id;
 	private String nombre;
-	private int contraseña;
-	private int rol;
+
 	
 	//constructor
 	public Usuario() {
 		super();
 		this.id = 0;
 		this.nombre = "";
-		this.contraseña = 0;
-		this.rol = 0;
+		
 				
 	}
 
@@ -35,31 +33,12 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public int getContraseña() {
-		return contraseña;
-	}
-
-	public void setContraseña(int contraseña) {
-		this.contraseña = contraseña;
-	}
-
-	public int getRol() {
-		return rol;
-	}
-
-	public void setRol(int rol) {
-		this.rol = rol;
-	}
 
 	//toString
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", contraseña=" + contraseña + ", rol=" + rol + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + "]";
 	}
-	
-	
-	
-	
-	
+
 
 }
