@@ -15,10 +15,16 @@ import com.ipartek.formacion.modelo.UsuarioDAOimpl;
  */
 
 public class GestionUsuarios {
+	static UsuarioDAOimpl dao = UsuarioDAOimpl.getInstance();
+	static boolean continuar = false;
+	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 	
-		try (Scanner sc = new Scanner(System.in);){
+		
+		
+		
+		try {
 			
 			System.out.println("Menu de Opciones");
 			System.out.println("------------------------------------------------------------");
@@ -33,160 +39,40 @@ public class GestionUsuarios {
 			System.out.println("------------------------------------------------------------");
 			
 			
-			
-			boolean continuar = false;
-			
-			
 			do {
 				
 				System.out.println("Por favor digite el numero de la accion que desea realizar");
 				int opcion = Integer.parseInt(sc.nextLine());
 				
-				UsuarioDAOimpl dao = UsuarioDAOimpl.getInstance();
 				
 				switch (opcion) {
-				case 1:
-					
-					//UsuarioDAOimpl dao = UsuarioDAOimpl.getInstance();
-				
-					
-					ArrayList<Usuario> usuarios = dao.getAll();
-					
-					System.out.println("Listado de Usuario");
-					System.out.println("---------------------------------------------");
-					
-					for (Usuario u : usuarios) {
-						System.out.println(u);
-					}
-					
-					continuar = true;
+				case 1: 
+					listar();
 					
 					break;
 				case 2:
-					System.out.println("Buscar Usuario por id");
-					System.out.println("---------------------------------------------");
+					buscar_id();
 					
-					//UsuarioDAOimpl dao = UsuarioDAOimpl.getInstance();
-					
-					System.out.println("Listado de Usuario");
-					System.out.println("---------------------------------------------");
-					
-					for (Usuario u : dao.getAll()) {
-						System.out.println(u);
-					}
-					
-					try{
-						
-						System.out.println("Dime el id del usuario que desea");
-						int id = Integer.parseInt(sc.nextLine());
-						
-						Usuario u = dao.getById(id);
-						System.out.println(u);
-						
-					} catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					continuar = true;
 					break;
 					
 				case 3:
-					System.out.println("Eliminar Usuario");
-					System.out.println("---------------------------------------------");
+					eliminar();
 					
-					System.out.println("Listado de Usuarios");
-					System.out.println("----------------------------------------");
-					
-					for (Usuario u : dao.getAll()) {
-						System.out.println(u);
-					}
-					
-					try {
-						System.out.println("Dime el id para eliminar el producto");
-						int id = Integer.parseInt(sc.nextLine());
-						
-						Usuario uEliminado = dao.delete(id);
-						System.out.println("Eliminado con exito " + uEliminado.getNombre());
-						
-					} catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					
-					
-					continuar = true;
 					break;
 					
-				case 4: //TODO no ingresa nuevo usuarios
-					System.out.println("Insertar Usuario");
-					System.out.println("---------------------------------------------");
+				case 4: 
+					insertar();
 					
-					boolean continuar1 = true;
-					
-					try {
-					
-					   do {
-						 
-							try {
-								
-								  System.out.println("dime un nuevo usuario a guardar");
-								   String nombre = sc.nextLine();
-								   Usuario u = new Usuario();
-								   u.setNombre(nombre);
-								   
-								   u = dao.insert(u);
-								   continuar1 = false;
-								   
-								
-							} catch (Exception e) {
-								System.out.println("Lo sentimos pero el usuario ya existe, dime otro");
-							} 
-					   
-						
-					} while (continuar1);
-					
-					} catch (Exception e) {
-						System.out.println("Tenemos un problema " + e.getMessage());
-					}
-					
-					continuar = true;
 					break;
 					
 				case 5:
-					System.out.println("Modificar Usuario");
-					System.out.println("---------------------------------------------");
+					modificar();
 					
-					System.out.println("Listado de Usuarios");
-					System.out.println("----------------------------------------");
-
-					for (Usuario u : dao.getAll()) {
-						System.out.println(u);
-					}
-
-					try {
-						System.out.println("Dime el id para modificar el producto");
-						int id = Integer.parseInt(sc.nextLine());
-
-						System.out.println("Dime el nuevo nombre del producto");
-						String nombre = sc.nextLine();
-
-						Usuario u = new Usuario();
-						u.setId(id);
-						u.setNombre(nombre);
-
-						dao.update(u);
-						System.out.println("Tu lista se ha modificado con exito");
-
-					} catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					
-					continuar = true;
 					break;
 					
 				case 6:
-					System.out.println("Buscar Usuario por nombre");
-					System.out.println("---------------------------------------------");
+					buscar_nombre();
 					
-					continuar = true;
 					break;
 					
 				case 7:
@@ -207,14 +93,168 @@ public class GestionUsuarios {
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 		
-		
-	
-		
-		
-	
 	}
 
+
+	private static void listar() {
+		ArrayList<Usuario> usuarios = dao.getAll();
+		
+		System.out.println("Listado de Usuario");
+		System.out.println("---------------------------------------------");
+		
+		for (Usuario u : usuarios) {
+			System.out.println(u);
+		}
+		
+		continuar = true;
+		
+	}
+	
+	private static void buscar_id() {
+		System.out.println("Buscar Usuario por id");
+		System.out.println("---------------------------------------------");
+		
+		
+		System.out.println("Listado de Usuario");
+		System.out.println("---------------------------------------------");
+		
+		for (Usuario u : dao.getAll()) {
+			System.out.println(u);
+		}
+		
+		try{
+			
+			System.out.println("Dime el id del usuario que desea");
+			int id = Integer.parseInt(sc.nextLine());
+			
+			Usuario u = dao.getById(id);
+			System.out.println(u);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		continuar = true;
+		
+	}
+
+	
+	private static void eliminar() {
+		System.out.println("Eliminar Usuario");
+		System.out.println("---------------------------------------------");
+		
+		System.out.println("Listado de Usuarios");
+		System.out.println("----------------------------------------");
+		
+		for (Usuario u : dao.getAll()) {
+			System.out.println(u);
+		}
+		
+		try {
+			System.out.println("Dime el id para eliminar el producto");
+			int id = Integer.parseInt(sc.nextLine());
+			
+			Usuario uEliminado = dao.delete(id);
+			System.out.println("Eliminado con exito " + uEliminado.getNombre());
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	
+		continuar = true;
+		
+	}
+	
+	private static void insertar() {
+		System.out.println("Insertar Usuario");
+		System.out.println("---------------------------------------------");
+		
+		boolean continuar1 = true;
+		
+		try {
+		
+		   do {
+			 
+				try {
+					
+					  System.out.println("dime un nuevo usuario a guardar");
+					   String nombre = sc.nextLine();
+					   Usuario u = new Usuario();
+					   u.setNombre(nombre);
+					   
+					   u = dao.insert(u);
+					   continuar1 = false;
+					   
+					
+				} catch (Exception e) {
+					System.out.println("Lo sentimos pero el usuario ya existe, dime otro");
+				} 
+		   
+			
+		} while (continuar1);
+		
+		} catch (Exception e) {
+			System.out.println("Tenemos un problema " + e.getMessage());
+		}
+		
+		continuar = true;
+		
+	}
+	
+	private static void modificar() {
+		System.out.println("Modificar Usuario");
+		System.out.println("---------------------------------------------");
+		
+		System.out.println("Listado de Usuarios");
+		System.out.println("----------------------------------------");
+
+		for (Usuario u : dao.getAll()) {
+			System.out.println(u);
+		}
+
+		try {
+			System.out.println("Dime el id para modificar el producto");
+			int id = Integer.parseInt(sc.nextLine());
+
+			System.out.println("Dime el nuevo nombre del producto");
+			String nombre = sc.nextLine();
+
+			Usuario u = new Usuario();
+			u.setId(id);
+			u.setNombre(nombre);
+
+			dao.update(u);
+			System.out.println("Tu lista se ha modificado con exito");
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		continuar = true;
+		
+	}
+	
+	
+	private static void buscar_nombre() {
+		System.out.println("Buscar Usuario por nombre");
+		System.out.println("---------------------------------------------");
+		
+		
+		try{
+			
+			System.out.println("Dime nombre a buscar:");
+			String palabraBuscada = sc.nextLine();
+			
+			ArrayList<Usuario> registro = dao.getAllByNombre(palabraBuscada);
+			System.out.println(registro);
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		continuar = true;
+		
+	}
 }

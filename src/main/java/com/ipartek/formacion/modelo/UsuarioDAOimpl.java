@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class UsuarioDAOimpl implements UsuarioDAO{
 
@@ -180,8 +181,41 @@ public class UsuarioDAOimpl implements UsuarioDAO{
 
 	@Override
 	public ArrayList<Usuario> getAllByNombre(String palabraBuscada) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Usuario> registro = new ArrayList<Usuario>();
+		
+		try (
+				Connection conexion = ConnectionManager.getConnection();
+				PreparedStatement pst = conexion.prepareStatement(SQL_GET_BY_NAME);	
+				
+	) {
+
+		
+				pst.setString(1, "%" + palabraBuscada + "%");
+				ResultSet rs = pst.executeQuery();
+			
+				// consultar 1 a 1 los resultados, hasta que no existan mas registros
+				while (rs.next()) {
+
+					int id = rs.getInt("id");
+					String nombre = rs.getString("nombre");
+
+					Usuario u = new Usuario();
+					u.setId(id);
+					u.setNombre(nombre);
+
+					System.out.println(u);
+
+				} // while
+			
+
+		
+
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+
+		}
+		return registro;
 	}
 	
 }
