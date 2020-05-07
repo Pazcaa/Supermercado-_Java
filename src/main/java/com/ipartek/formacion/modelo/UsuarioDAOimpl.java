@@ -46,8 +46,7 @@ public class UsuarioDAOimpl implements UsuarioDAO{
 				PreparedStatement pst = conexion.prepareStatement(SQL_GET_ALL);
 				ResultSet rs = pst.executeQuery();){
 		   
-		   //	System.out.println("Listado de Usuarios");
-			//System.out.println("---------------------------------------------");
+		
 		   
 		
 		   while (rs.next()) {
@@ -84,7 +83,7 @@ public class UsuarioDAOimpl implements UsuarioDAO{
 		) {
 
 			pst.setInt(1, id);
-			ResultSet rs = pst.executeQuery();
+			try(ResultSet rs = pst.executeQuery();){
 			
 			if (rs.next()) {
 				registro.setId(rs.getInt("id"));
@@ -92,6 +91,7 @@ public class UsuarioDAOimpl implements UsuarioDAO{
 			}else {
 				throw new Exception("No se pueden encontrar registro con igual id=" + id);
 			} 
+			}
 			
 		}catch (Exception e) {
 			
@@ -191,7 +191,8 @@ public class UsuarioDAOimpl implements UsuarioDAO{
 
 		
 				pst.setString(1, "%" + palabraBuscada + "%");
-				ResultSet rs = pst.executeQuery();
+				
+				try(ResultSet rs = pst.executeQuery();){
 			
 				// consultar 1 a 1 los resultados, hasta que no existan mas registros
 				while (rs.next()) {
@@ -203,9 +204,11 @@ public class UsuarioDAOimpl implements UsuarioDAO{
 					u.setId(id);
 					u.setNombre(nombre);
 
-					System.out.println(u);
+					registro.add(u);
+					
 
 				} // while
+				}
 			
 
 		

@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 import com.ipartek.formacion.modelo.ConnectionManager;
 import com.ipartek.formacion.modelo.Producto;
-import com.ipartek.formacion.modelo.ProductoDAO;
+import com.ipartek.formacion.modelo.ProductoDAOimpl;
 
 public class EliminarProductoPorIdDAO {
 public static void main(String[] args) {
 	
-	ProductoDAO dao = ProductoDAO.getInstance();
+	ProductoDAOimpl dao = ProductoDAOimpl.getInstance();
 	
 	System.out.println("Listado de Productos");
 	System.out.println("----------------------------------------");

@@ -3,24 +3,18 @@ package com.ipartek.formacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.ipartek.formacion.modelo.Producto;
-import com.ipartek.formacion.modelo.ProductoDAOimpl;
 import com.ipartek.formacion.modelo.Usuario;
 import com.ipartek.formacion.modelo.UsuarioDAOimpl;
 
-/**
- * Poder ver todos los alumnos, crear nuevos, eliminar, editar y buscar por nombre
- * @author javaee
- *
- */
-
-public class GestionUsuarios {
+public class GestionRol {
+	
 	static UsuarioDAOimpl dao = UsuarioDAOimpl.getInstance();
 	static boolean continuar = false;
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-	
+		
+
 		
 		
 		
@@ -266,4 +260,7 @@ public class GestionUsuarios {
 		continuar = true;
 		
 	}
-}
+
+	}
+
+
