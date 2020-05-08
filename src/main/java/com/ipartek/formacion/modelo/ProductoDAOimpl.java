@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 /**
  * Esta clase sirve para detallar los metodos para obtener, modificar, eliminar y actualizar la base de datos de MySQL.

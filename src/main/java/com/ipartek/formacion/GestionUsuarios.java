@@ -3,8 +3,7 @@ package com.ipartek.formacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.ipartek.formacion.modelo.Producto;
-import com.ipartek.formacion.modelo.ProductoDAOimpl;
+
 import com.ipartek.formacion.modelo.Usuario;
 import com.ipartek.formacion.modelo.UsuarioDAOimpl;
 
@@ -215,10 +214,10 @@ public class GestionUsuarios {
 		}
 
 		try {
-			System.out.println("Dime el id para modificar el producto");
+			System.out.println("Dime el id para modificar el usuario");
 			int id = Integer.parseInt(sc.nextLine());
 
-			System.out.println("Dime el nuevo nombre del producto");
+			System.out.println("Dime el nuevo nombre del usuario");
 			String nombre = sc.nextLine();
 
 			Usuario u = new Usuario();

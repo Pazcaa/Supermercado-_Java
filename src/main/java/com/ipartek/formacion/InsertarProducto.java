@@ -1,13 +1,13 @@
 package com.ipartek.formacion;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.util.Scanner;
 
 import com.ipartek.formacion.modelo.ConnectionManager;
-import com.ipartek.formacion.modelo.Producto;
+
 
 
 
@@ -29,9 +29,9 @@ public class InsertarProducto {
 		boolean continuar = true;
 		
 		
-		try
+		try(Scanner sc = new Scanner(System.in);)
 		{
-			Scanner sc = new Scanner(System.in);
+			
 			
 			//comprobar que tenemos el .jar de MySQL
 		  // Class.forName("com.mysql.jdbc.Driver");
