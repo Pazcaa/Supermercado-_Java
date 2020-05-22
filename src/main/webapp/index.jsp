@@ -15,5 +15,6 @@ out.print("<p> Esta línea esta en Java  </p>");
 <br>
 <a href="productos"> ver productos en tabla</a>
 <br>
-<a href="formulario-producto.jsp"> Crear producto</a>
-
+<a href="producto"> Crear producto</a>
+<br>
+<a href="usuario"> Crear usuario</a>

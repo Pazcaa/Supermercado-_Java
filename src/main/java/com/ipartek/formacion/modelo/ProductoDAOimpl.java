@@ -33,8 +33,8 @@ public class ProductoDAOimpl implements ProductoDAO{
 	
 	
 //executeQUery => ResultSet
-	private final String SQL_GET_ALL = "SELECT id, nombre FROM producto ORDER BY id DESC;";
-	private final String SQL_GET_BY_ID = "SELECT id, nombre FROM producto WHERE id = ? ;";
+	private final String SQL_GET_ALL = "SELECT id, nombre, precio, imagen FROM producto ORDER BY id DESC;";
+	private final String SQL_GET_BY_ID = "SELECT id, nombre, precio, imagen FROM producto WHERE id = ? ;";
 	
 	// excecuteUpdate => AffectedRows (numero de filas afectadas)
 	private final String SQL_INSERT = "INSERT INTO producto (nombre, id_usuario) VALUES ( ? , 1); ";
@@ -63,9 +63,13 @@ public class ProductoDAOimpl implements ProductoDAO{
 			   
 			   int id = rs.getInt("id");
 			   String nombre = rs.getString("nombre");
+			   float precio = rs.getFloat("precio");
+			   String imagen = rs.getString("imagen");
 			   
 			   Producto p = new Producto(nombre);
 			   p.setId(id);
+			   p.setPrecio(precio);
+			   p.setImagen(imagen);
 			   
 			   //guardo cada producto con su id en el arraylist
 			   registro.add(p);
@@ -93,6 +97,8 @@ public class ProductoDAOimpl implements ProductoDAO{
 			if (rs.next()) {
 				registro.setId(rs.getInt("id"));
 				registro.setNombre(rs.getString("nombre"));
+				registro.setPrecio(rs.getFloat("precio"));
+				registro.setImagen(rs.getString("imagen"));
 			}else {
 				throw new Exception("No se pueden encontrar registro con igual id=" + id);
 			} 

@@ -17,12 +17,17 @@
 
 <p>${mensaje}</p>
 
+<p><a href="producto">Formulario para crear nuevo producto</a></p>
+
 
 <table>
 	<thead>
   		<tr>
-   			 <td>Id</th>
-   			 <td>Nombre</th> 
+   			 <td>Id</td>
+   			 <td>Nombre</td> 
+   			 <td>Precio</td> 
+   			 <td>Imagen</td> 
+   			 <td>Operaciones</td> 
  		</tr>
  		</thead>
  		<tbody>
@@ -30,12 +35,16 @@
  			<tr> 
  				<td>${p.id}</td>
  				<td>${p.nombre}</td>
- 				<td><a href="producto-eliminar?id=${p.id}">ELIMINAR</a></td>
+ 				<td>${p.precio} &euro;</td>
+ 				<td><img src="${p.imagen}" alt="Imagen de ${p.nombre}"></td>
+ 				<td>
+ 					<a href="producto?id=${p.id}">EDITAR</a>
+ 					<a href="producto-eliminar?id=${p.id}">ELIMINAR</a>
+ 				</td>
  			</tr>
- 		</c:forEach>
- 	</tbody>
-  
-</table>
+ 			</c:forEach>
+ 		</tbody>
+	</table>
 	
 </body>
 </html>

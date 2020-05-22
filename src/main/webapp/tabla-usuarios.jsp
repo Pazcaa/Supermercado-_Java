@@ -1,36 +1,45 @@
 <%@page import="com.ipartek.formacion.modelo.Usuario"%>
 <%@page import="java.util.ArrayList"%>
-<a href="index.jsp">Volver</a>
+ 
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="index.jsp">Volver</a>
 
-<h1> Tabla con Usuarios</h1>
+	<h1> Tabla con Usuarios</h1>
+
+	<p>${mensaje}</p>
+
+	<p><a href="usuario">Formulario para crear nuevo producto</a></p>
 
 
-<style>
-td {border: 1px solid black}
-</style>
+<table>
+	<thead>
+  		<tr>
+   			 <td>Id</td>
+   			 <td>Nombre</td> 
+   			 <td>Operaciones</td> 
+ 		</tr>
+ 		</thead>
+ 		<tbody>
+ 			<c:forEach items="${Usuarios}" var="u">
+ 			<tr> 
+ 				<td>${u.id}</td>
+ 				<td>${u.nombre}</td>
+ 				<td>
+ 					<a href="usuario?id=${u.id}">EDITAR</a>
+ 					<a href="usuario-eliminar?id=${u.id}">ELIMINAR</a>
+ 				</td>
+ 			</tr>
+ 			</c:forEach>
+ 		</tbody>
+	</table>	
 
-<%
-// recogemos la informacion "atributo" enviada desde el controlador
-ArrayList<Usuario> usuarios = (ArrayList<Usuario>)request.getAttribute("Usuarios");
-%>
-
-
-
-<table style="width:100%; border: 1px solid black">
-  <tr>
-    <th>id</th>
-    <th>nombre</th> 
-  </tr>
-  
-  <% for (Usuario u : usuarios){%>
-  
-  
-  <tr>
-  <td><%=u.getId() %></td>
-  <td><%=u.getNombre() %></td>
-  </tr>
-  
-  <% } %>
-  
-</table>
+</body>
+</html>
 

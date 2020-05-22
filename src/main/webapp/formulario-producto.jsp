@@ -8,17 +8,24 @@
 </head>
 <body>
 <a href="index.jsp">Volver</a>
-<h1>Formulario para Crear Producto</h1>
+<h1>Formulario para Crear/Modificar Producto</h1>
 
 <p>${mensaje}</p>
 
-<form action="producto-crear" method="post">
+<form action="producto" method="post">
 
-	<input type="text" name="nombre" placeholder="Escribe el nombre del Producto">
-
-	<input type="submit" value="Crear">
+	<label for="id"> Id:</label>
+	<input type="text" name="id" id="id" value="${producto.id}" placeholder="ID solo para leer" readonly>
+	<br>
+	<label for="nombre"> Producto:</label>
+	<input type="text" name="nombre" id="nombre" value="${producto.nombre}" placeholder="Escribe el nombre del Producto">
+	<br>
+	<input type="submit" value="Guardar">
 </form>
 
+<p><a href="producto">Crear Nuevo Producto</a></p>
+
+<p><a href="productos">Lista de Productos</a></p>
 
 </body>
 </html>

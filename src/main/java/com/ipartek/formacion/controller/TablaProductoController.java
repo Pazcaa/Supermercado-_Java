@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ipartek.formacion.modelo.Producto;
 import com.ipartek.formacion.modelo.ProductoDAOimpl;
-import com.ipartek.formacion.modelo.Usuario;
-import com.ipartek.formacion.modelo.UsuarioDAOimpl;
+
 
 /**
  * Servlet implementation class TablaProductoController

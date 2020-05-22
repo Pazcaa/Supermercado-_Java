@@ -4,12 +4,16 @@ public class Producto {
 	
 	private int id;
 	private String nombre;
+	private float precio;
+	private String imagen; 
 	
 	//constructor
 	public Producto() {
 		super();
 		this.id = 0;
 		this.nombre = "";
+		this.precio = 0;
+		this.imagen = "https://picsum.photos/100/100";
 	}
 
 
@@ -18,7 +22,7 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	//Getters and setters
+	//Getters and setters	
 	public int getId() {
 		return id;
 	}
@@ -26,6 +30,26 @@ public class Producto {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+	public float getPrecio() {
+		return precio;
+	}
+
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
+
+
+	public String getImagen() {
+		return imagen;
+	}
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 
@@ -38,10 +62,9 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-//toString
-	@Override
+@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", imagen=" + imagen + "]";
 	} 
 	
 	
