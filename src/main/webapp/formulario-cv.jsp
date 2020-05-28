@@ -1,16 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%! String title = "Formulario CV";  %>
+<%@ include file="includes/cabecera.jsp"  %>	
 	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-	<a href="index.jsp">Volver pagina principal</a>
+
+	<a href="index.jsp"><h6>Volver pagina principal</h6></a>
 
 	<h1>Formulario Completo</h1>
 
@@ -24,10 +19,8 @@
 		</div>
 	</c:if>
 
-
-
-	<main>
-		<div class="form container">
+	
+		<div class="container centrar">
 			<h1 class="formulario">Rellena tu CV</h1>
 			
 			<form novalidate action="curriculum" method="post">
@@ -94,15 +87,12 @@
 
 
 			</form>
+			<p>los campos con <b>*</b> son obligatorios</p>
 		</div>
 
-		<p>
-			los campos con <b>*</b> son obligatorios
-		</p>
+		
 
 
-	</main>
+<%@ include file="includes/pie-pagina.jsp"  %>
 
 
-</body>
-</html>

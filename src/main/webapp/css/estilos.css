@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(252, 252, 205);
+}
+
+h5 {
+    color: rgb(230, 178, 10);
+    font-size: 2rem;
+}
+h6 {
+    color: rgb(230, 178, 10);
+    font-size: 1.2rem;
+}
+p {
+    margin-top: 0;
+margin-bottom: 0rem;
+}
+th, td {
+    vertical-align: middle !important;
+}
+
+.price {
+    display: inline-block;
+font-weight: 500;
+color: #242424;
+margin-right: .5rem;
+}
+.price1 {
+    display: inline-block;
+font-size: 13px;
+color: #8f8f8f;
+vertical-align: baseline;
+font-weight: 200;
+}
+
+#navbar {
+    background-color: rgb(255, 255, 224);
+}
+#footer {
+    padding-right: 3rem ;
+    padding-left: 3rem;
+    background-color: rgb(255, 255, 224);
+}
+
+.logo {
+    color:  rgb(230, 178, 10);
+  
+}
+.logo:hover {
+    color:  rgb(230, 178, 10);
+    text-decoration: none;
+}
+
+#boton {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color:  rgb(230, 178, 10);
+    border:  rgb(230, 178, 10);
+    color: rgb(255, 255, 255);
+
+}
+.content {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+#login {
+    background-color:  rgb(230, 178, 10);
+    border:  rgb(230, 178, 10);
+}
+.comprar {
+    background-color:  rgb(230, 178, 10);
+    border:  rgb(230, 178, 10);
+    color: rgb(255, 255, 255);
+    border-radius: 0.8rem;
+}
+.imagen {
+    display: block;
+    margin: auto;
+    height: 100px;
+}
+.centrar {
+    padding-right: 3rem ;
+    padding-left: 3rem;
+}
+#tabla {
+    background-color: white;
+}
+.container {
+    min-height: 80vh;
+}
+.active {
+    font-weight: 800;
+   
+}
+.active:hover {
+    text-decoration: none;
+}

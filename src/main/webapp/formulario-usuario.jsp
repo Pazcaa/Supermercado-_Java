@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%! String title = "Usuario";  %>
+<%@ include file="includes/cabecera.jsp"  %>
+
 <a href="index.jsp">Volver</a>
 <h1>Formulario para Crear/Modificar Usuario</h1>
 
@@ -27,5 +22,6 @@
 
 <p><a href="usuarios">Lista de Usuarios</a></p>
 
-</body>
-</html>
+<%@ include file="includes/pie-pagina.jsp"  %>
+
+

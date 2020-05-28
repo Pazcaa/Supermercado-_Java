@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%! String title = "Resumen CV";  %>
+<%@ include file="includes/cabecera.jsp"  %>
+
 
 <a href="index.jsp">Volver pagina principal</a>
 
@@ -24,5 +19,4 @@
 	<p>Comentario: ${message}</p>
 	
 
-</body>
-</html>
+<%@ include file="includes/pie-pagina.jsp"  %>
