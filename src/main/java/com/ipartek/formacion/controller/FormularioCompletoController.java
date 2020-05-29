@@ -99,7 +99,7 @@ public class FormularioCompletoController extends HttpServlet {
 			request.setAttribute("password", password);
 			request.setAttribute("age", edad);
 			request.setAttribute("dni", dni);
-			request.setAttribute("education", educacion);
+			request.setAttribute("educacion", educacion);
 			request.setAttribute("education", education);
 			request.setAttribute("sexo", sexo);
 			request.setAttribute("sex", sex);

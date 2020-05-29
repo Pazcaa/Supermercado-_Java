@@ -3,10 +3,10 @@
 
 
       <footer id="footer" class="pt-4 my-md-5 pt-md-5 border-top">
-        <div class="row">
+        <div id="footer1" class="row">
           <div class="col-3 col-sm">
-            <a href="https://es-es.facebook.com/" target="_blank" class="logo"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://twitter.com/login?lang=es" target="_blank" class="logo"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://es-es.facebook.com/" target="_blank" class="logo"><i class="fab fa-facebook-square fa-lg"></i></a>
+            <a href="https://twitter.com/login?lang=es" target="_blank" class="logo"><i class="fab fa-twitter-square fa-lg"></i></a>
             <small class="d-block mb-3 text-muted">&copy; 2020</small>
           </div>   
           <div class="col-9 col-sm">

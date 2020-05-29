@@ -1,5 +1,6 @@
 body {
     background-color: rgb(252, 252, 205);
+   
 }
 
 h5 {
@@ -16,6 +17,15 @@ margin-bottom: 0rem;
 }
 th, td {
     vertical-align: middle !important;
+}
+span {
+	color:  rgb(230, 178, 10);
+	font-size: 1.2rem;
+	font-weight: 900;
+}
+img {
+	height: 100px;
+width: auto;
 }
 
 .price {
@@ -35,10 +45,16 @@ font-weight: 200;
 #navbar {
     background-color: rgb(255, 255, 224);
 }
+#navbar1 {
+	 max-width: 2000px;
+}
 #footer {
     padding-right: 3rem ;
     padding-left: 3rem;
     background-color: rgb(255, 255, 224);
+}
+#footer1 {
+	max-width: 2000px;
 }
 
 .logo {
@@ -49,6 +65,8 @@ font-weight: 200;
     color:  rgb(230, 178, 10);
     text-decoration: none;
 }
+
+
 
 #boton {
     position: fixed;
@@ -89,6 +107,7 @@ font-weight: 200;
 }
 .container {
     min-height: 80vh;
+    max-width: 2000px;
 }
 .active {
     font-weight: 800;

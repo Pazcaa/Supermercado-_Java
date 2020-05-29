@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%! String title = "Inicio";  %>
-<%@ include file="includes/cabecera.jsp"  %>
+<jsp:include page="includes/cabecera.jsp" >
+  <jsp:param name="pagina" value="inicio" />
+  <jsp:param name="title" value="Inicio" /> 
+</jsp:include>
 
-
+<div class="centrar">
 <h1> Página Principal </h1>
 
 <%
@@ -10,20 +12,20 @@
 out.print("<p> Esta línea esta en Java  </p>");
 
 %>
-<a href="MiPrimerServlet?nombre=paz&apellido=caamano&email=aaa@aaa.com"><h5>Mi primer servlet Ejemplo</h5></a>
+<a class="logo" href="MiPrimerServlet?nombre=paz&apellido=caamano&email=aaa@aaa.com"><h6>Mi primer servlet Ejemplo</h6></a>
 <br>
-<a href="formulario-cv.jsp"> Formulario CV</a>
+<a class="logo" href="formulario-cv.jsp"><h6>Formulario CV</h6></a>
 <br>
-<a href="getYpost.jsp"> Ejemplo de Get Y Post</a>
+<a class="logo" href="getYpost.jsp"><h6> Ejemplo de Get Y Post</h6></a>
 <br>
-<a href="usuarios"> ver usuarios en tabla</a>
+<a class="logo" href="usuarios"><h6>ver usuarios en tabla</h6></a>
 <br>
-<a href="productos"> ver productos en tabla</a>
+<a class="logo" href="productos"><h6>ver productos en tabla</h6></a>
 <br>
-<a href="producto"> Crear producto</a>
+<a class="logo" href="producto"><h6>Crear producto</h6></a>
 <br>
-<a href="usuario"> Crear usuario</a>
-
+<a class="logo" href="usuario"><h6>Crear usuario</h6></a>
+</div>
 
 
 <%@ include file="includes/pie-pagina.jsp"  %>

@@ -61,13 +61,19 @@ public class ProductoGuardarController extends HttpServlet {
 			//recoger los valores del formulario
 			String idParameter = request.getParameter("id");
 			String nombre = request.getParameter("nombre");
+			String precioParameter = request.getParameter("precio");
+			String imagen = request.getParameter("imagen");
 			
 			int id = Integer.parseInt(idParameter);
+			float precio = Float.parseFloat(precioParameter);
+			
 			
 			ProductoDAOimpl dao = ProductoDAOimpl.getInstance();
 			
 			producto.setId(id);
 			producto.setNombre(nombre);
+			producto.setPrecio(precio);
+			producto.setImagen(imagen);
 			
 			if (id == 0) {
 				
@@ -86,6 +92,7 @@ public class ProductoGuardarController extends HttpServlet {
 			//enviar datos a la vista
 			request.setAttribute("mensaje", mensaje);
 			request.setAttribute("producto", producto);
+			
 			
 			//ir a la nueva vista o jsp
 			request.getRequestDispatcher("formulario-producto.jsp").forward(request, response);

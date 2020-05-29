@@ -37,9 +37,10 @@ public class ProductoDAOimpl implements ProductoDAO{
 	private final String SQL_GET_BY_ID = "SELECT id, nombre, precio, imagen FROM producto WHERE id = ? ;";
 	
 	// excecuteUpdate => AffectedRows (numero de filas afectadas)
-	private final String SQL_INSERT = "INSERT INTO producto (nombre, id_usuario) VALUES ( ? , 1); ";
+	private final String SQL_INSERT = "INSERT INTO producto (nombre, precio, imagen, id_usuario) VALUES ( ? , ? , ? , 1); ";
+	private String SQL_UPDATE = " UPDATE producto SET nombre = ?, precio=?, imagen=?  WHERE id = ? ; "; 
 	private String SQL_DELETE = " DELETE FROM producto WHERE id = ? ; "; //si no escribo 'where id = ?' me cargo toda la lista!!!
-	private String SQL_UPDATE = " UPDATE producto SET nombre = ? WHERE id = ? ; "; 
+	
 	
 	
 	public ArrayList<Producto> getAllByNombre(String nombre) {
@@ -141,6 +142,8 @@ public class ProductoDAOimpl implements ProductoDAO{
 				PreparedStatement pst = conexion.prepareStatement(SQL_INSERT, PreparedStatement.RETURN_GENERATED_KEYS);) {
 			
 			pst.setString(1, pojo.getNombre());
+			pst.setFloat(2, pojo.getPrecio());
+			pst.setString(3, pojo.getImagen());
 			int AffectedRows = pst.executeUpdate();
 			
 			if (AffectedRows == 1) {
@@ -176,7 +179,9 @@ public class ProductoDAOimpl implements ProductoDAO{
 				PreparedStatement pst = conexion.prepareStatement(SQL_UPDATE)) {
 			
 			pst.setString(1, pojo.getNombre());
-			pst.setInt(2, pojo.getId());
+			pst.setFloat(2, pojo.getPrecio());
+			pst.setString(3, pojo.getImagen());
+			pst.setInt(4, pojo.getId());
 			
 			int affectedRows = pst.executeUpdate();
 			if (affectedRows != 1) {

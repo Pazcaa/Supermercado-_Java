@@ -19,19 +19,19 @@
  		<!-- mis estilos CSS -->
      <link rel="stylesheet" href="css/estilos.css">
 
-    <title> <%=title%> | Supermercado</title>
+    <title> ${param.title} | Supermercado</title>
 </head>
 <body>
-    <header id="navbar"  > 
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
-        <i  class="fas fa-apple-alt"></i>
-        <i  class="fas fa-carrot"></i>
-        <h5 class="my-0 mr-md-auto font-weight-normal"><a class="logo" href="index.jsp">Supermercado</a></h5>
+    <header id="navbar" class="border-bottom shadow-sm"  > 
+        <div id="navbar1" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
+        <i  class="fas fa-apple-alt fa-2x"></i>
+        <i  class="fas fa-carrot fa-2x"></i>
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a class="logo" href="index.jsp">Inicio</a></h5>
         <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" href="formulario.html">Registro Producto</a>
-          <a class="p-2 text-dark" href="listado.html">Listado de Productos</a>
+          <a class="p-2 text-dark ${ ( 'productos' eq param.pagina ) ? 'active' : '' } " href="productos">Productos</a>
+          <a class="p-2 text-dark ${ ( 'formulario' eq param.pagina ) ? 'active' : '' } " href="producto">Crear/Modificar Productos</a>
         </nav>
-        <a class="btn btn-outline-warning" href="login.html">Login Admnistrador</a>
+        <a class="btn btn-outline-warning" href="formulario-cv.jsp">Formulario CV</a>
       </div></header>
 
 <main class="container">
