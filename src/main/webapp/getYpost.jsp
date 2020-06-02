@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
-    <%! String title = "Get y Post";  %>
-<%@ include file="includes/cabecera.jsp" %>
+
+<jsp:include page="includes/cabecera.jsp" >
+  <jsp:param name="pagina" value="get-post" />
+  <jsp:param name="title" value="Get/Post" /> 
+</jsp:include>
 
 <a href="index.jsp"><h5>Inicio</h5></a>
 <h1>Ejemplo de Gets y Post</h1>

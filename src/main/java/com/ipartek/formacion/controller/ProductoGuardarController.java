@@ -53,8 +53,7 @@ public class ProductoGuardarController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
-		
-		String mensaje = "";
+		Alerta alerta = new Alerta();
 		Producto producto = new Producto();
 		
 		try {
@@ -83,14 +82,14 @@ public class ProductoGuardarController extends HttpServlet {
 				dao.update(producto);
 			}
 			
-			mensaje = "Producto guardado con exito";
+			alerta = new Alerta("success", "Producto guardado con exito") ;
 			
 		} catch (Exception e) {
-			mensaje = "lo sentimos, pero ha ocurrido una excepcion" + e.getMessage();
+			alerta = new Alerta("danger", "Lo sentimos, pero ha ocurrido una excepcion, " + e.getMessage());
 			e.printStackTrace();
 		}finally {
 			//enviar datos a la vista
-			request.setAttribute("mensaje", mensaje);
+			request.setAttribute("alerta", alerta);
 			request.setAttribute("producto", producto);
 			
 			

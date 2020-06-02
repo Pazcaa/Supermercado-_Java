@@ -12,11 +12,8 @@
 <div class="centrar">
 <h1> Tabla con Productos</h1>
 
-<div class="alert alert-danger" role="alert">
-  <p>${mensaje}</p>
-</div>
 
-<p><a href="producto">Formulario para crear nuevo producto</a></p>
+<p><a class="logo" href="producto">Formulario para crear nuevo producto</a></p>
 
 <div class="centrar">
 <table id="tabla" class="table table-bordered">

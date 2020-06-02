@@ -144,14 +144,14 @@ public class ProductoDAOimpl implements ProductoDAO{
 			pst.setString(1, pojo.getNombre());
 			pst.setFloat(2, pojo.getPrecio());
 			pst.setString(3, pojo.getImagen());
-			int AffectedRows = pst.executeUpdate();
+			int affectedRows = pst.executeUpdate();
 			
-			if (AffectedRows == 1) {
+			if (affectedRows == 1) {
 				//conseguir el ID que nos ha arrojado
 				
 				try(ResultSet rskeys = pst.getGeneratedKeys()){
 					if (rskeys.next()) {
-						int id = rskeys.getInt(0);
+						int id = rskeys.getInt(1);
 						pojo.setId(id);
 					}
 				}
@@ -161,7 +161,7 @@ public class ProductoDAOimpl implements ProductoDAO{
 			}
 			
 		} catch (Exception e) {
-			
+			throw new Exception("El nombre " + pojo.getNombre() +" ya existe");
 		}
 		
 		return pojo;

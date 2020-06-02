@@ -31,21 +31,22 @@ public class ProductoEliminarController extends HttpServlet {
 		
 		//Llamar al DAO
 		ProductoDAOimpl dao = ProductoDAOimpl.getInstance();
-		String mensaje = "";
+		Alerta alerta = new Alerta();
+		
 		
 		try {
 			Producto p = dao.delete(id);
-			mensaje = "Eliminado el producto " + p.getNombre();
+			alerta = new Alerta("success", "Eliminado el producto " + p.getNombre());
 			
 		} catch (Exception e) {
-			mensaje = "ERROR " + e.getMessage();
+			alerta = new Alerta("danger", "ERROR " + e.getMessage());
 			e.printStackTrace();
 		}
 		
 		//Enviar datos a la vista
 		ArrayList<Producto> productos = dao.getAll();
 		request.setAttribute("Productos", productos);
-		request.setAttribute("mensaje", mensaje);
+		request.setAttribute("alerta", alerta);
 		
 		request.getRequestDispatcher("productos.jsp").forward(request, response);
 		
