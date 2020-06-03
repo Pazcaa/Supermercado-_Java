@@ -28,6 +28,7 @@
 	        <i  class="fas fa-apple-alt fa-2x"></i>
 	        <i  class="fas fa-carrot fa-2x"></i>
 	        <h5 class="my-0 mr-md-auto font-weight-normal"><a class="logo" href="index.jsp">Inicio</a></h5>
+	      
 	        <div class="dropdown">
 			  <button class="btn btn-outline-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			   Ejemplos
@@ -38,6 +39,8 @@
 				  <a class="dropdown-item" href="usuarios">Usuarios</a>
 				  <a class="dropdown-item" href="usuario">Crear/Modificar Usuarios</a>
 				  <a class="dropdown-item" href="cookies.jsp">Ejemplo Cookie</a>
+				  <a class="dropdown-item" href="apartadoA.jsp">UF2406_E1 ApartadoA</a>
+				   <a class="dropdown-item" href="apartadoB.jsp">UF2406_E1 ApartadoB</a>
 				</div>
 			</div>
 		        <nav class="my-2 my-md-0 mr-md-3">
