@@ -6,7 +6,7 @@
 </jsp:include>
 
 <div class="centrar">
-<form action="login" class="form-signin content" method="post">
+<form action="login" class="form-signin content" method="post" onsubmit="cifrar()">
 
   <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesion</h1>
 	  <div class="form-group">

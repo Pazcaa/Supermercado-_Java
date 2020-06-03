@@ -22,7 +22,7 @@
 
     <title> ${param.title} | Supermercado</title>
 </head>
-<body>
+<body onload="init()">
     <header id="navbar" class="border-bottom shadow-sm"  > 
         <div id="navbar1" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
 	        <i  class="fas fa-apple-alt fa-2x"></i>
@@ -36,18 +36,16 @@
 			 	<div class="dropdown-menu">
 				  <a class="dropdown-item" href="formulario-cv.jsp">Formulario CV</a>
 				  <a class="dropdown-item" href="getYpost.jsp">Ejemplo de Get Y Post</a>
-				  <a class="dropdown-item" href="usuarios">Usuarios</a>
-				  <a class="dropdown-item" href="usuario">Crear/Modificar Usuarios</a>
 				  <a class="dropdown-item" href="cookies.jsp">Ejemplo Cookie</a>
 				  <a class="dropdown-item" href="apartadoA.jsp">UF2406_E1 ApartadoA</a>
 				   <a class="dropdown-item" href="apartadoB.jsp">UF2406_E1 ApartadoB</a>
 				</div>
 			</div>
 		        <nav class="my-2 my-md-0 mr-md-3">
-		          <a class="p-2 text-dark ${ ( 'productos' eq param.pagina ) ? 'active' : '' } " href="productos">Productos</a>
-		         
 		        <c:if test="${not empty usuario_login }">
-		          <a class="p-2 text-dark ${ ( 'formulario' eq param.pagina ) ? 'active' : '' } " href="producto">Crear/Modificar Productos</a>
+		          <a class="p-2 text-dark ${ ( 'usuarios' eq param.pagina ) ? 'active' : '' } " href="usuario">Usuarios</a>
+		       
+		          <a class="p-2 text-dark ${ ( 'productos' eq param.pagina ) ? 'active' : '' } " href="productos">Productos</a>
 		        </c:if> 
 		        </nav>
 	       

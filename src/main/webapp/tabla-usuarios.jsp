@@ -13,11 +13,7 @@
 <div class="centrar">
 	<h1> Tabla con Usuarios</h1>
 
-	<div class="alert alert-danger" role="alert">
- 		 <p>${mensaje}</p>
-	</div>
-
-	<p><a href="usuario">Formulario para crear nuevo producto</a></p>
+	<p><a href="usuario?id=0">Formulario para crear nuevo usuario</a></p>
 
 
 <table id="tabla" class="table table-bordered">
@@ -25,6 +21,7 @@
   		<tr>
    			 <td>Id</td>
    			 <td>Nombre</td> 
+   			 <td>Rol</td> 
    			 <td>Operaciones</td> 
  		</tr>
  		</thead>
@@ -33,6 +30,7 @@
  			<tr> 
  				<td>${u.id}</td>
  				<td>${u.nombre}</td>
+ 				<td>${u.idRol}</td>
  				<td>
  					<a href="usuario?id=${u.id}"><i class="fas fa-edit fa-lg logo"></i>Editar</a>
  					<a href="usuario-eliminar?id=${u.id}"><i class="fas fa-trash fa-lg logo"></i>Eliminar</a>
