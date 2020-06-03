@@ -46,18 +46,19 @@
 		        <nav class="my-2 my-md-0 mr-md-3">
 		          <a class="p-2 text-dark ${ ( 'productos' eq param.pagina ) ? 'active' : '' } " href="productos">Productos</a>
 		         
-		        <c:if test="${not empty isLogueado }">
+		        <c:if test="${not empty usuario_login }">
 		          <a class="p-2 text-dark ${ ( 'formulario' eq param.pagina ) ? 'active' : '' } " href="producto">Crear/Modificar Productos</a>
 		        </c:if> 
 		        </nav>
 	       
+				       
 	        <div>
-	        	<c:if test="${empty isLogueado }">
+	        	<c:if test="${empty usuario_login }">
 	       		 <a class="btn btn-outline-warning ${ ( 'login' eq param.pagina ) ? 'active' : '' }" href="login.jsp">Iniciar Sesion</a>
 	       		 </c:if>
 	       		 
-	       		 <c:if test="${not empty isLogueado }">
-	       		  <a class="btn btn-outline-warning" href="logout"> ${nombreUsuario} Cerrar Sesion</a>	 
+	       		 <c:if test="${not empty usuario_login }">
+	       		  <a class="btn btn-outline-warning" href="logout"> ${usuario_login.nombre} Cerrar Sesion</a>	 
 	       		 </c:if>
 	       		 
 	        </div>
