@@ -71,10 +71,28 @@ public class UsuarioGuardarController extends HttpServlet {
 		String nombre = request.getParameter("nombre");
 		String password = request.getParameter("password");
 		String idRol = request.getParameter("rol");
+		String rol1 = request.getParameter("rol");
+		
 		
 		Usuario usuario = new Usuario();
 		
 		try {
+			
+			switch (rol1) {
+			case "2":
+				idRol = "2";
+				break;
+			case "3":
+				idRol = "3";
+				break;
+			case "4":
+				idRol = "4";
+				break;
+
+			default:
+				idRol = "1";
+				break;
+			}
 			
 			int id = Integer.parseInt(idParameter);
 			int rol = Integer.parseInt(idRol);
@@ -110,7 +128,7 @@ public class UsuarioGuardarController extends HttpServlet {
 			request.setAttribute("usuario", usuario);
 			
 			//ir a la nueva vista o jsp
-			request.getRequestDispatcher("VIEW_FORM").forward(request, response);
+			request.getRequestDispatcher(VIEW_FORM).forward(request, response);
 		}
 	}//doPost
 

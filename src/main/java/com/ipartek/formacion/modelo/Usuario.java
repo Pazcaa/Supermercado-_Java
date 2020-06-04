@@ -13,7 +13,7 @@ public class Usuario {
 		this.id = 0;
 		this.nombre = "";
 		this.contrasenia = "";
-		this.idRol = 0;
+		this.idRol = 2;
 				
 	}
 

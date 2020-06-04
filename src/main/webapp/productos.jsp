@@ -15,32 +15,33 @@
 
 <p><a class="logo" href="producto">Formulario para crear nuevo producto</a></p>
 
-<div class="centrar">
-<table id="tabla" class="table table-bordered">
-	<thead>
-  		<tr>
-   			 <td>Id</td>
-   			 <td>Nombre</td> 
-   			 <td>Precio</td> 
-   			 <td>Imagen</td> 
-   			 <td>Operaciones</td> 
- 		</tr>
- 		</thead>
- 		<tbody>
- 			<c:forEach items="${Productos}" var="p">
- 			<tr> 
- 				<td>${p.id}</td>
- 				<td>${p.nombre}</td>
- 				<td>${p.precio} &euro;</td>
- 				<td><img src="${p.imagen}" alt="Imagen de ${p.nombre}"></td>
- 				<td>
- 					<a href="producto?id=${p.id}"><i class="fas fa-edit fa-lg logo"></i>Editar</a><br>
- 					<a href="producto-eliminar?id=${p.id}"><i class="fas fa-trash fa-lg logo"></i>Eliminar</a>
- 				</td>
- 			</tr>
- 			</c:forEach>
- 		</tbody>
-	</table>
+	<div class="centrar">
+		<table id="tabla" class="table table-bordered">
+			<thead>
+		  		<tr>
+		   			 <td>Id</td>
+		   			 <td>Nombre</td> 
+		   			 <td>Precio</td> 
+		   			 <td>Imagen</td> 
+		   			 <td>Operaciones</td> 
+		 		</tr>
+		 	</thead>
+		 	<tbody>
+		 		<c:forEach items="${Productos}" var="p">
+		 			<tr> 
+		 				<td>${p.id}</td>
+		 				<td>${p.nombre}</td>
+		 				<td>${p.precio} &euro;</td>
+		 				<td><img src="${p.imagen}" alt="Imagen de ${p.nombre}"></td>
+		 				<td>
+		 					<a href="producto?id=${p.id}"><i class="fas fa-edit fa-lg logo"></i>Editar</a><br>
+		 					<a href="producto-eliminar?id=${p.id}"><i class="fas fa-trash fa-lg logo"></i>Eliminar</a>
+		 				</td>
+		 			</tr>
+		 		</c:forEach>
+		 	</tbody>
+		</table>
+	</div>
 </div>
 	<%@ include file="includes/pie-pagina.jsp"  %>
 	

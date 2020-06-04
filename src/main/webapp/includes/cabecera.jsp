@@ -46,7 +46,10 @@
 		          <a class="p-2 text-dark ${ ( 'usuarios' eq param.pagina ) ? 'active' : '' } " href="usuario">Usuarios</a>
 		       
 		          <a class="p-2 text-dark ${ ( 'productos' eq param.pagina ) ? 'active' : '' } " href="productos">Productos</a>
+		         
+		          <a class="p-2 text-dark active">${usuario_login.nombre}</a>
 		        </c:if> 
+		        	
 		        </nav>
 	       
 				       
@@ -56,7 +59,7 @@
 	       		 </c:if>
 	       		 
 	       		 <c:if test="${not empty usuario_login }">
-	       		  <a class="btn btn-outline-warning" href="logout"> ${usuario_login.nombre} Cerrar Sesion</a>	 
+	       		  <a class="btn btn-outline-warning" href="logout">Cerrar Sesion</a>	 
 	       		 </c:if>
 	       		 
 	        </div>

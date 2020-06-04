@@ -29,10 +29,10 @@ public class UsuarioDAOimpl implements UsuarioDAO {
 	private final String SQL_GET_ALL 		= "SELECT id, nombre, contrasenia, id_rol FROM usuario ORDER BY id DESC;";
 	private final String SQL_GET_BY_ID 		= "SELECT id, nombre, contrasenia, id_rol FROM usuario WHERE id = ? ;";
 	private final String SQL_GET_BY_NAME 	= "SELECT id, nombre, contrasenia, id_rol FROM usuario WHERE nombre LIKE ? ;";
-	private final String SQL_EXISTE 		= " SELECT id, nombre, contrasenia, id_rol FROM usuario WHERE nombre = ? AND contrasenia = ? ; ";
+	private final String SQL_EXISTE 		= "SELECT id, nombre, contrasenia, id_rol FROM usuario WHERE nombre = ? AND contrasenia = ? ; ";
 
 	// excecuteUpdate => AffectedRows (numero de filas afectadas)
-	private final String SQL_INSERT = "INSERT INTO usuario (nombre, contrasenia, id_rol) VALUES ( ? , 123456, 1); ";
+	private final String SQL_INSERT = "INSERT INTO usuario (nombre, contrasenia, id_rol) VALUES ( ? ,?, ?); ";
 	private final String SQL_DELETE = " DELETE FROM usuario WHERE id = ? ; "; // si no escribo 'where id = ?' me cargo toda la lista!!!
 	private final String SQL_UPDATE = " UPDATE usuario SET nombre = ? WHERE id = ? ; ";
 
@@ -112,6 +112,8 @@ public class UsuarioDAOimpl implements UsuarioDAO {
 
 			
 			pst.setString(1, pojo.getNombre());
+			pst.setString(2, pojo.getContrasenia());
+			pst.setInt(3, pojo.getIdRol());
 			
 			int AffectedRows = pst.executeUpdate();
 			if (AffectedRows == 1) {
