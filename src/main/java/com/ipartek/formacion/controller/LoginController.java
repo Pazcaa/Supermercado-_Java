@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -42,6 +43,7 @@ public class LoginController extends HttpServlet {
 		String language = request.getParameter("idioma");
 		String recuerdame = request.getParameter("recuerdame");
 		String mensaje = "";
+		
 		
 		switch (language) {
 		case "en":
@@ -93,6 +95,12 @@ public class LoginController extends HttpServlet {
 			
 			request.setAttribute("idioma", idioma);
 			request.setAttribute("language", language);
+			
+			
+			//usuarios conectados recuperar y actualizar, cuidado porque la 1º vez es null
+			ServletContext sc = request.getServletContext();
+			int usuariosConectados = (int)((sc.getAttribute("usuarios_conectados") == null) ?  0 : sc.getAttribute("usuarios_conectados"));
+			sc.setAttribute("usuarios_conectados", ++usuariosConectados);
 			
 			
 			
